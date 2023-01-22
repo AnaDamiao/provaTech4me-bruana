@@ -1,14 +1,18 @@
-package br.com.tech4meroupas.atendimento.model;
+package br.com.tech4meroupas.atendimento.shared;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
-@Document("Atendimento")
-public class Atendimento {
-    @Id
+public class AtendimentoCompletoDto {
     private String id;
+    @NotEmpty(message="informe esté compo está em branco")
+    @NotBlank(message="tem que informar os caracteres")
     private String produto;
+    @Size(min=1,max =2,message = "infirme pp,p,m,g ou gg")
     private String tamanho;
+    @Positive(message="valor deve ser informado")
     private double valor;
     public String getId() {
         return id;
@@ -34,5 +38,4 @@ public class Atendimento {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    
 }
