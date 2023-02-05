@@ -8,6 +8,6 @@ import br.com.tech4me.vendas.model.Atendimento;
 
 @FeignClient("atendimento")
 public interface AtendimentoClient {
-    @RequestMapping(method = RequestMethod.GET, value="/produto/{id}")
+    @RequestMapping(method = RequestMethod.GET, value="/loja/{id}")
     Atendimento obterAtendimento(@PathVariable String id);
 }

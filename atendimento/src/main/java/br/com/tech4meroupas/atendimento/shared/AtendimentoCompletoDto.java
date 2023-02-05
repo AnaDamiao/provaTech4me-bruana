@@ -7,8 +7,8 @@ import jakarta.validation.constraints.Size;
 
 public class AtendimentoCompletoDto {
     private String id;
-    @NotEmpty(message="informe esté compo está em branco")
-    @NotBlank(message="tem que informar os caracteres")
+    @NotEmpty(message="Este Campo não pode estar em branco")
+    @NotBlank(message="Por Favor, Informe os caracteres")
     private String produto;
     @Size(min=1,max =2,message = "infirme pp,p,m,g ou gg")
     private String tamanho;

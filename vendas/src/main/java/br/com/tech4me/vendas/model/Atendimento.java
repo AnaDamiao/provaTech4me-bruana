@@ -1,10 +1,8 @@
 package br.com.tech4me.vendas.model;
 
-import org.springframework.data.annotation.Id;
 
 public class Atendimento {
     
-    @Id
     private String produto;
     private Double valor;
     

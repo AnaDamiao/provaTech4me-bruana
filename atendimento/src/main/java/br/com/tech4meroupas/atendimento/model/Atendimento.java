@@ -9,7 +9,7 @@ public class Atendimento {
     private String id;
     private String produto;
     private String tamanho;
-    private double valor;
+    private Double valor;
     
     public String getId() {
         return id;
@@ -29,10 +29,10 @@ public class Atendimento {
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
     

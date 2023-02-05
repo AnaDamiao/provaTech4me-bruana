@@ -21,14 +21,19 @@ import jakarta.validation.Valid;
 
 
 @RestController
-@RequestMapping ("/atendimento")
+@RequestMapping ("/loja")
 public class Controler {
     @Autowired
     private AtendimentoService servico;
 
     @PostMapping
     public ResponseEntity <AtendimentoCompletoDto>cadastrarAtendimento(@RequestBody @Valid AtendimentoCompletoDto atendimento){
-        return new ResponseEntity<>(servico.cadastrarAtendimento(null),HttpStatus.CREATED);
+        return new ResponseEntity<>(servico.cadastrarAtendimento(atendimento),HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<AtendimentoCompletoDto>> obterCardapio() {
+      return new ResponseEntity<>(servico.obterTodosAtendimentos(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -39,12 +44,13 @@ public class Controler {
         if (retorno.isPresent()){
             return new ResponseEntity<>(retorno.get(),HttpStatus.NOT_FOUND);
         }else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);  
         }
     }
     @PutMapping
     public ResponseEntity <AtendimentoCompletoDto>atualizarAtendimento(@PathVariable String id,@RequestBody AtendimentoCompletoDto atendimento){
-        Optional <AtendimentoCompletoDto> retorno = servico.atualizarAtendimentoPorId(id, null);
+        Optional <AtendimentoCompletoDto> retorno = servico.atualizarAtendimentoPorId(id, atendimento);
+
         if(retorno.isPresent()){
             return new ResponseEntity<>(retorno.get(),HttpStatus.ACCEPTED);
         }else{
@@ -64,9 +70,6 @@ public class Controler {
           return new ResponseEntity<>(HttpStatus.NO_CONTENT);
       }
 
-    @GetMapping
-    public ResponseEntity<List<AtendimentoCompletoDto>> obterAtendimento(){
-        return new ResponseEntity<>(servico.obterTodosAtendimentos(),HttpStatus.OK);
+    
     }
     
-}

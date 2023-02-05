@@ -22,9 +22,9 @@ public class AtendimentoServiceImpl implements AtendimentoService {
 
     @Override
     public List<AtendimentoCompletoDto> obterTodosAtendimentos() {
-        List<Atendimento>pizzas=repositorio.findAll();
-        return pizzas.stream()
-        .map(p->new ModelMapper().map(p,AtendimentoCompletoDto.class))
+        List<Atendimento>atendimentos=repositorio.findAll();
+        return atendimentos.stream()
+        .map(p->new ModelMapper().map(p, AtendimentoCompletoDto.class))
         .collect(Collectors.toList());
     }
 
@@ -46,7 +46,7 @@ public class AtendimentoServiceImpl implements AtendimentoService {
     @Override
     public AtendimentoCompletoDto cadastrarAtendimento(AtendimentoCompletoDto atendimento) {
         Atendimento atendimentos =new ModelMapper().map(atendimento,Atendimento.class);
-        repositorio.save(atendimentos);
+        repositorio.save(atendimentos); 
         return new ModelMapper().map(atendimento,AtendimentoCompletoDto.class);
     }
 

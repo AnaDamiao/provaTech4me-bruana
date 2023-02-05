@@ -1,12 +1,14 @@
 package br.com.tech4me.vendas.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("Vendas")
 public class Venda {
     @Id
     private String id;
     private String nomeCliente;
-    private String idAtendimento;
+    private String idRoupa;
     private Double valor;
 
     
@@ -23,10 +25,10 @@ public class Venda {
         this.nomeCliente = nomeCliente;
     }
     public String getIdAtendimento() {
-        return idAtendimento;
+        return idRoupa;
     }
-    public void setIdAtendimento(String idAtendimento) {
-        this.idAtendimento = idAtendimento;
+    public void setIdAtendimento(String idRoupa) {
+        this.idRoupa = idRoupa;
     }
     public Double getValor() {
         return valor;
