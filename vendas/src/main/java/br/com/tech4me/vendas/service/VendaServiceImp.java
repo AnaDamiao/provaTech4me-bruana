@@ -26,8 +26,8 @@ public class VendaServiceImp implements VendaService {
     @Override
     public List<VendaCompletoDto> obterVenda() {
         List<Venda> venda = repository.findAll();
-        List<VendaCompletoDto> dtoObter = venda.stream().map(p -> new ModelMapper().map(p, VendaCompletoDto.class)).collect(Collectors.toList());
-        return dtoObter;
+        List<VendaCompletoDto> dto = venda.stream().map(p -> new ModelMapper().map(p, VendaCompletoDto.class)).collect(Collectors.toList());
+        return dto;
     }
 
     @Override
@@ -48,14 +48,16 @@ public class VendaServiceImp implements VendaService {
         repository.deleteById(id);
         
     }
+    
 
     @Override
-    public VendaCompletoDto CadastrarVenda(VendaCompletoDto dtoObter) {
-        Venda venda = new ModelMapper().map(dtoObter, Venda.class);
+    public VendaCompletoDto CadastrarVenda(VendaCompletoDto dto) {
+        Venda venda = new ModelMapper().map(dto, Venda.class);
 
         repository.save(venda);
         return new ModelMapper().map(venda,VendaCompletoDto.class);
     }
+    
 
     @Override
     public Optional<VendaDto> atualizarVendaPorId(String id, VendaDto dto) {

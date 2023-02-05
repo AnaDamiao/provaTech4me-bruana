@@ -1,9 +1,11 @@
 package br.com.tech4me.vendas.controller;
 
+import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import br.com.tech4me.vendas.service.VendaService;
 import br.com.tech4me.vendas.shared.VendaCompletoDto;
 import br.com.tech4me.vendas.shared.VendaDto;
@@ -22,7 +25,7 @@ import jakarta.validation.Valid;
 public class VendasController {
 
     @Autowired
-    public VendaService vender;
+    private VendaService vender;
 
     //cadastrando venda
    @PostMapping
@@ -31,17 +34,21 @@ public class VendasController {
 
     return new ResponseEntity<>(vender.CadastrarVenda(venda),HttpStatus.CREATED);
    }
- 
+   //buscar pedidos
+   @GetMapping
+   public ResponseEntity<List<VendaCompletoDto>> obtervendas(){
+    return new ResponseEntity<>(vender.obterVenda(),HttpStatus.OK);
+   }
   
     //Buscar por id
    @GetMapping("/{id}")
 
    public ResponseEntity<VendaDto> obterVendaPorId(@PathVariable String id)
    {
-    Optional<VendaDto> retorne = vender.obterVendaPorId(id);
+    Optional<VendaDto> retorno = vender.obterVendaPorId(id);
 
-    if(retorne.isPresent()){
-        return new ResponseEntity<>(retorne.get(), HttpStatus.FOUND);
+    if(retorno.isPresent()){
+        return new ResponseEntity<>(retorno.get(), HttpStatus.FOUND);
 
     }else {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
