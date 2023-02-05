@@ -6,12 +6,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import br.com.tech4meroupas.atendimento.model.Atendimento;
 import br.com.tech4meroupas.atendimento.repositorio.Repositorio;
 import br.com.tech4meroupas.atendimento.shared.AtendimentoCompletoDto;
 import br.com.tech4meroupas.atendimento.shared.AtendimentoDto;
 
-
+@Service
 public class AtendimentoServiceImpl implements AtendimentoService {
 
 

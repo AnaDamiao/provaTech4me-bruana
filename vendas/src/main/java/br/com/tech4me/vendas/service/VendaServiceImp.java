@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.tech4me.vendas.httpClient.AtendimentoClient;
 import br.com.tech4me.vendas.model.Venda;
@@ -13,6 +14,7 @@ import br.com.tech4me.vendas.repository.VendaRepository;
 import br.com.tech4me.vendas.shared.VendaCompletoDto;
 import br.com.tech4me.vendas.shared.VendaDto;
 
+@Service
 public class VendaServiceImp implements VendaService {
 
     @Autowired
