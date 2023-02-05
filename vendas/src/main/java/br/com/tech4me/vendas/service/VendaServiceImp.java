@@ -19,7 +19,7 @@ public class VendaServiceImp implements VendaService {
     private VendaRepository repository;
     
     @Autowired
-    private AtendimentoClient pizzariaClient;
+    private AtendimentoClient vendaClient;
 
     @Override
     public List<VendaCompletoDto> obterVenda() {
@@ -34,8 +34,8 @@ public class VendaServiceImp implements VendaService {
 
         if(venda.isPresent()){
            VendaDto Vendaloja = new ModelMapper().map (venda, VendaDto.class);
-           Vendaloja.setDadosAtendimento(pizzariaClient.obterAtendimento(Vendaloja.getIdAtendimento())); 
-           pizzariaClient.obterAtendimento(id);
+           Vendaloja.setDadosAtendimento(vendaClient.obterAtendimento(Vendaloja.getIdAtendimento())); 
+           vendaClient.obterAtendimento(id);
             return Optional.of(Vendaloja);
         }else{
             return Optional.empty();
