@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Positive;
 public class VendaCompletoDto {
         private String id;
         private String nomeCliente;
-        private String produto;
+        private String idRoupa;
         @Positive
         private Double quantidade;
 
@@ -24,10 +24,10 @@ public class VendaCompletoDto {
             this.nomeCliente = nomeCliente;
         }
         public String getProduto() {
-            return produto;
+            return idRoupa;
         }
-        public void setProduto(String produto) {
-            this.produto = produto;
+        public void setProduto(String idRoupa) {
+            this.idRoupa = idRoupa;
         }
         public Double getQuantidade() {
             return quantidade;
