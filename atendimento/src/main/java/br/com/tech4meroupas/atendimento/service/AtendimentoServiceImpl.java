@@ -44,9 +44,9 @@ public class AtendimentoServiceImpl implements AtendimentoService {
     }
 
     @Override
-    public AtendimentoCompletoDto cadastrarAtendimento(AtendimentoCompletoDto atendimento) {
-        Atendimento atendimentos =new ModelMapper().map(atendimento,Atendimento.class);
-        repositorio.save(atendimentos); 
+    public AtendimentoCompletoDto cadastrarAtendimento(AtendimentoCompletoDto dto){
+        Atendimento atendimento = new ModelMapper().map(dto,Atendimento.class);
+        repositorio.save(atendimento);
         return new ModelMapper().map(atendimento,AtendimentoCompletoDto.class);
     }
 
