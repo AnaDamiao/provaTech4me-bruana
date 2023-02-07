@@ -47,7 +47,7 @@ public class Controler {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);  
         }
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity <AtendimentoCompletoDto>atualizarAtendimento(@PathVariable String id,@RequestBody AtendimentoCompletoDto atendimento){
         Optional <AtendimentoCompletoDto> retorno = servico.atualizarAtendimentoPorId(id, atendimento);
 
@@ -57,6 +57,7 @@ public class Controler {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
+    
 
     @GetMapping("/porta")
       public String obterPorta (@Value("${local.server.port}") String porta){
