@@ -8,7 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.tech4me.vendas.httpClient.AtendimentoClient;
+import br.com.tech4me.vendas.httpClient.VendaClient;
 import br.com.tech4me.vendas.model.Venda;
 import br.com.tech4me.vendas.repository.VendaRepository;
 import br.com.tech4me.vendas.shared.VendaCompletoDto;
@@ -21,7 +21,7 @@ public class VendaServiceImp implements VendaService {
     private VendaRepository repository;
     
     @Autowired
-    private AtendimentoClient vendaClient;
+    private VendaClient vendaClient;
 
     @Override
     public List<VendaCompletoDto> obterVenda() {
@@ -42,7 +42,6 @@ public class VendaServiceImp implements VendaService {
             return Optional.empty();
         }
     }
-    
     @Override
     public void excluirVenda(String id) {
         repository.deleteById(id);

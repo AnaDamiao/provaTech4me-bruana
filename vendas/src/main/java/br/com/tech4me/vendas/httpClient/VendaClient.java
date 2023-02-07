@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import br.com.tech4me.vendas.model.Atendimento;
 
 @FeignClient("atendimento")
-public interface AtendimentoClient {
+public interface VendaClient {
     @RequestMapping(method = RequestMethod.GET, value="/loja/{id}")
     Atendimento obterAtendimento(@PathVariable String id);
 }
