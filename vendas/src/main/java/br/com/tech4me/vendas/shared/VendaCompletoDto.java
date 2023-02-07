@@ -8,7 +8,7 @@ public class VendaCompletoDto {
         private String idRoupa;
         @Positive
         private Double valor;
-
+        
         public String getId() {
             return id;
         }
@@ -21,18 +21,17 @@ public class VendaCompletoDto {
         public void setNomeCliente(String nomeCliente) {
             this.nomeCliente = nomeCliente;
         }
-        public String getProduto() {
+        public String getIdRoupa() {
             return idRoupa;
         }
-        public void setProduto(String idRoupa) {
+        public void setIdRoupa(String idRoupa) {
             this.idRoupa = idRoupa;
         }
-        public Double getQuantidade() {
+        public Double getValor() {
             return valor;
         }
-        public void setQuantidade(Double valor) {
+        public void setValor(Double valor) {
             this.valor = valor;
         }
- 
-        
+
 }
