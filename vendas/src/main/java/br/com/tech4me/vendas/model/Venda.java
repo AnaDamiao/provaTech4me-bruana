@@ -10,7 +10,6 @@ public class Venda {
     private String nomeCliente;
     private String idRoupa;
     private Double valor;
-
     
     public String getId() {
         return id;
@@ -24,10 +23,10 @@ public class Venda {
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
-    public String getIdAtendimento() {
+    public String getIdRoupa() {
         return idRoupa;
     }
-    public void setIdAtendimento(String idRoupa) {
+    public void setIdRoupa(String idRoupa) {
         this.idRoupa = idRoupa;
     }
     public Double getValor() {
@@ -36,6 +35,7 @@ public class Venda {
     public void setValor(Double valor) {
         this.valor = valor;
     }
+
 
    
 }

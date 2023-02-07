@@ -9,17 +9,16 @@ public class VendaDto {
     private Atendimento dadosAtendimento;
     private Double valor;
     
-    
     public String getNomeCliente() {
         return nomeCliente;
     }
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
-    public String getIdAtendimento() {
+    public String getIdRoupa() {
         return idRoupa;
     }
-    public void setIdAtendimento(String idRoupa) {
+    public void setIdRoupa(String idRoupa) {
         this.idRoupa = idRoupa;
     }
     public Atendimento getDadosAtendimento() {
@@ -34,6 +33,8 @@ public class VendaDto {
     public void setValor(Double valor) {
         this.valor = valor;
     }
+    
+
  
     
 

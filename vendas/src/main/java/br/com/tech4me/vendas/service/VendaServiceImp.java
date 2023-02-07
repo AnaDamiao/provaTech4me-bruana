@@ -36,7 +36,7 @@ public class VendaServiceImp implements VendaService {
 
         if(venda.isPresent()){
            VendaDto Vendaloja = new ModelMapper().map (venda, VendaDto.class);
-           Vendaloja.setDadosAtendimento(vendaClient.obterAtendimento(Vendaloja.getIdAtendimento()));
+           Vendaloja.setDadosAtendimento(vendaClient.obterAtendimento(Vendaloja.getIdRoupa()));
             return Optional.of(Vendaloja);
         }else{
             return Optional.empty();
