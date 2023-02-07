@@ -7,7 +7,7 @@ public class VendaCompletoDto {
         private String nomeCliente;
         private String idRoupa;
         @Positive
-        private Double quantidade;
+        private Double valor;
 
         public String getId() {
             return id;
@@ -28,10 +28,10 @@ public class VendaCompletoDto {
             this.idRoupa = idRoupa;
         }
         public Double getQuantidade() {
-            return quantidade;
+            return valor;
         }
-        public void setQuantidade(Double quantidade) {
-            this.quantidade = quantidade;
+        public void setQuantidade(Double valor) {
+            this.valor = valor;
         }
  
         

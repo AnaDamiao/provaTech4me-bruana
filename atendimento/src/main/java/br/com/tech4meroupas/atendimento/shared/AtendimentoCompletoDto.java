@@ -15,6 +15,7 @@ public class AtendimentoCompletoDto {
     @Positive(message="valor deve ser informado")
     private double valor;
     public String getId() {
+        
         return id;
     }
     public void setId(String id) {

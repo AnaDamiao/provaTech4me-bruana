@@ -36,13 +36,13 @@ public class VendaServiceImp implements VendaService {
 
         if(venda.isPresent()){
            VendaDto Vendaloja = new ModelMapper().map (venda, VendaDto.class);
-           Vendaloja.setDadosAtendimento(vendaClient.obterAtendimento(Vendaloja.getIdAtendimento())); 
-           vendaClient.obterAtendimento(id);
+           Vendaloja.setDadosAtendimento(vendaClient.obterAtendimento(Vendaloja.getIdAtendimento()));
             return Optional.of(Vendaloja);
         }else{
             return Optional.empty();
         }
     }
+    
     @Override
     public void excluirVenda(String id) {
         repository.deleteById(id);
