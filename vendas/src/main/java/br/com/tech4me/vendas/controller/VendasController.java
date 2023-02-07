@@ -42,14 +42,11 @@ public class VendasController {
   
     //Buscar por id
    @GetMapping("/{id}")
-
    public ResponseEntity<VendaDto> obterVendaPorId(@PathVariable String id)
    {
     Optional<VendaDto> retorno = vender.obterVendaPorId(id);
-
     if(retorno.isPresent()){
         return new ResponseEntity<>(retorno.get(), HttpStatus.FOUND);
-
     }else {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
