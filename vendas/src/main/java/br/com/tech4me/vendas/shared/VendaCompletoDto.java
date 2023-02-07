@@ -9,8 +9,6 @@ public class VendaCompletoDto {
         @Positive
         private Double quantidade;
 
-
-
         public String getId() {
             return id;
         }

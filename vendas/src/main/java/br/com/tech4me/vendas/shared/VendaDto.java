@@ -1,5 +1,6 @@
 package br.com.tech4me.vendas.shared;
 
+
 import br.com.tech4me.vendas.model.Atendimento;
 
 public class VendaDto {
