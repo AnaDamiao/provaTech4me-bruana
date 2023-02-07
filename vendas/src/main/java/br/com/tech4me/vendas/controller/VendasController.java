@@ -36,7 +36,7 @@ public class VendasController {
    }
    //buscar pedidos
    @GetMapping
-   public ResponseEntity<List<VendaCompletoDto>> obtervendas(){
+   public ResponseEntity<List<VendaCompletoDto>> obterVenda(){
     return new ResponseEntity<>(vender.obterVenda(),HttpStatus.OK);
    }
   

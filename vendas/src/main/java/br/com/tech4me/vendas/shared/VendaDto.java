@@ -5,7 +5,7 @@ import br.com.tech4me.vendas.model.Atendimento;
 
 public class VendaDto {
     private String nomeCliente;
-    private String idRoupa;
+    private String idProduto;
     private Atendimento dadosAtendimento;
     private Double valor;
     
@@ -15,11 +15,11 @@ public class VendaDto {
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
-    public String getIdRoupa() {
-        return idRoupa;
+    public String getIdProduto() {
+        return idProduto;
     }
-    public void setIdRoupa(String idRoupa) {
-        this.idRoupa = idRoupa;
+    public void setIdProduto(String idProduto) {
+        this.idProduto = idProduto;
     }
     public Atendimento getDadosAtendimento() {
         return dadosAtendimento;
@@ -34,11 +34,5 @@ public class VendaDto {
         this.valor = valor;
     }
     
-
- 
-    
-
-
-
-    
+  
 }
