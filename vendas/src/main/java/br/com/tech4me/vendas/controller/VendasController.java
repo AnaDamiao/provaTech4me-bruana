@@ -27,7 +27,7 @@ public class VendasController {
     @Autowired
     private VendaService vender;
 
-    //cadastrando venda
+    //realizando venda
    @PostMapping
    public ResponseEntity <VendaCompletoDto> cadastrarVenda(@RequestBody @Valid VendaCompletoDto venda)
    {
