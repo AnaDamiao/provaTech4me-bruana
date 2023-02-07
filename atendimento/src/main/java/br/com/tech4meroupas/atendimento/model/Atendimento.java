@@ -35,5 +35,5 @@ public class Atendimento {
     public void setValor(Double valor) {
         this.valor = valor;
     }
-    
+
 }

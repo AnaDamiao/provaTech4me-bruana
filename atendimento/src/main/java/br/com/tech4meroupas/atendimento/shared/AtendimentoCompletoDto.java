@@ -10,7 +10,7 @@ public class AtendimentoCompletoDto {
     @NotEmpty(message="Este Campo não pode estar em branco")
     @NotBlank(message="Por Favor, Informe os caracteres")
     private String produto;
-    @Size(min=1,max =2,message = "infirme pp,p,m,g ou gg")
+    @Size(min=1,max=2,message = "informe pp,p,m,g ou gg")
     private String tamanho;
     @Positive(message="valor deve ser informado")
     private double valor;
@@ -39,4 +39,6 @@ public class AtendimentoCompletoDto {
     public void setValor(double valor) {
         this.valor = valor;
     }
+    
+
 }

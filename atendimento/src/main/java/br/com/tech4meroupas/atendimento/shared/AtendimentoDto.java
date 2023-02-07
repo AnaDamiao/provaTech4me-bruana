@@ -6,6 +6,7 @@ public class AtendimentoDto {
     private String produto;
     private String tamanho;
     private double valor;
+
     
     public String getId() {
         return id;
@@ -31,6 +32,8 @@ public class AtendimentoDto {
     public void setValor(double valor) {
         this.valor = valor;
     }
+    
+
 
 
 }
