@@ -42,7 +42,7 @@ public class Controler {
 
 
         if (retorno.isPresent()){
-            return new ResponseEntity<>(retorno.get(),HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(retorno.get(),HttpStatus.OK);
         }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);  
         }
